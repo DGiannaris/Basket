@@ -1,4 +1,8 @@
-.itemCont{
+.background-image{
   box-shadow: 7px 7px 22px -9px rgba(0,0,0,0.75);
   
+}
+.background-image:hover {
+  transform: scale(1.2) ;
+  transition: transform 5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
