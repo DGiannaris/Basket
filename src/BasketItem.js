@@ -4,11 +4,12 @@ import './Item.css';
 function BasketItem({item,key,setBasket,basket}) {
   const [onmouse, setOnMouse] = useState(false);
  
-
+  
 
  
     return (
     <div key={key}>
+     
       <div style={{display:'flex',flexDirection:'row',marginTop:'3%'}} >
         <div style={{width:300,height:160}}>
            <img  src={item.img}  
@@ -20,14 +21,18 @@ function BasketItem({item,key,setBasket,basket}) {
         <div style={{display:'flex',flexDirection:'row',}}>
   
           <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}} onClick={()=>{
-              let newitem=item;
-              let newbasket=basket;
+             
+              let newbasket=basket.slice();
 
-                newitem.quantity=item.quantity-1;
-                newbasket=basket.filter(it=>it.name !=item.name);
-                setBasket([...newbasket,newitem])
+               newbasket.forEach((it,ind) => {
+                if (it.key === item.key) {
+                  item.quantity-1>0?it.quantity = item.quantity-1:newbasket.splice(ind, 1);
+                }
+              });
+                
+                setBasket([...newbasket]);
               }}>
-            <img
+            <img className='cursor'
               style={{ width: 20, height: 20, borderRadius: 13,transform: `rotate(90deg)`}}
               src={require("./assets/arrow.png")}
             />
@@ -38,14 +43,17 @@ function BasketItem({item,key,setBasket,basket}) {
         </div>
 
           <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}} onClick={()=>{
-              let newitem=item;
-              let newbasket=basket;
-
-                newitem.quantity=item.quantity+1;
-                newbasket=basket.filter(it=>it.name !=item.name);
-                setBasket([...newbasket,newitem])
+             
+              let newbasket=basket.slice();
+              newbasket.forEach((it) => {
+                if (it.key === item.key) {
+                  it.quantity = item.quantity+1;
+                }
+              });
+                
+              setBasket([...newbasket]);
               }}>
-            <img
+            <img className='cursor'
               style={{ width: 20, height: 20, borderRadius: 13,transform: `rotate(270deg)`}}
               src={require("./assets/arrow.png")}
             />
@@ -53,7 +61,22 @@ function BasketItem({item,key,setBasket,basket}) {
         </div>
       </div>  
 
-     
+      <div onClick={()=>{
+        let newbasket=basket.slice();
+
+        newbasket.forEach((it,ind) => {
+         if (it.key === item.key) {
+         newbasket.splice(ind, 1);
+         }
+       });
+         
+         setBasket([...newbasket]);
+      }}>
+        <img className='cursor'
+            style={{ width: 35, height: 35, borderRadius: 13,paddingTop:40,paddingLeft:35 }}
+            src={require("./assets/cancel.png")}
+          />
+      </div>
 
       </div>
     </div>

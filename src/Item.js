@@ -32,7 +32,7 @@ function Item({item,key,setBasket,basket}) {
               }
               setBasket([...newbasket,newitem])
               }}>
-              <img
+              <img className='cursor'
                 style={{width:30,height:30, borderRadius: 13 }}
                 src={require("./assets/basket-icon.png")}
               />

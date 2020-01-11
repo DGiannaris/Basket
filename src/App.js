@@ -10,7 +10,7 @@ function App() {
   const [basket, setBasket] = useState([]);
 
 
-  console.log(basket)
+  let total=basket.reduce((a, b)=>{ return a + b.quantity*b.price;}, 0);
   return (
     <div className="App">
       <div  style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:content==0?'45%':'44.2%',alignItems:'flex-end'}}>
@@ -56,10 +56,19 @@ function App() {
 
       {content==1 && 
         <div style={{marginTop:'5%'}}>
+           <p style={{fontSize:30,fontFamily:'Montserrat',position:'absolute',left:'64%',top:'15%'}}>
+              {`Total: ${total}`}
+          </p>
+          {total>100 && <p>Discount 10%</p>}
+
+
            {basket.length>0?basket.map((item,ind )=> (
           <BasketItem item={item} key={ind} setBasket={setBasket} basket={basket} />
         )):
-        <p>Nothing to see here</p>
+          <div> 
+            <p style={{fontSize:35}}>¯\_(ツ)_/¯</p>
+            <p>Nothing to see here </p>
+          </div>
         }
       
         </div>

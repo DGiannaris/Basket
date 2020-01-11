@@ -6,3 +6,11 @@
   transform: scale(1.2) ;
   transition: transform 5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
+
+.cursor:hover{
+  cursor: pointer;
+}
+
+.cursor:active{
+  transform: scale(0.9) ;
+}
