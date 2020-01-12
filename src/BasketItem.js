@@ -16,9 +16,9 @@ function BasketItem({item,key,setBasket,basket}) {
            style={{width:200,height:150,borderRadius:13}}  />
         </div> 
       
-      <div style={{display:'flex',flexDirection:'column',alignItems:'center',}}>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center',width:200}}>
         <p style={{fontFamily:'Montserrat'}}>{item.name}  <p style={{fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p> </p>  
-        <div style={{display:'flex',flexDirection:'row',}}>
+        <div style={{display:'flex',flexDirection:'row'}}>
   
           <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}} onClick={()=>{
              
@@ -26,7 +26,7 @@ function BasketItem({item,key,setBasket,basket}) {
 
                newbasket.forEach((it,ind) => {
                 if (it.key === item.key) {
-                  item.quantity-1>0?it.quantity = item.quantity-1:newbasket.splice(ind, 1);
+                  item.quantity-1>0?it.quantity = parseInt(item.quantity, 10)-1:newbasket.splice(ind, 1);
                 }
               });
                 
@@ -47,7 +47,7 @@ function BasketItem({item,key,setBasket,basket}) {
               let newbasket=basket.slice();
               newbasket.forEach((it) => {
                 if (it.key === item.key) {
-                  it.quantity = item.quantity+1;
+                  it.quantity = parseInt(item.quantity, 10)+1;
                 }
               });
                 
@@ -61,7 +61,7 @@ function BasketItem({item,key,setBasket,basket}) {
         </div>
       </div>  
 
-      <div onClick={()=>{
+      <div style={{marginLeft: 'auto' }} onClick={()=>{
         let newbasket=basket.slice();
 
         newbasket.forEach((it,ind) => {
@@ -73,7 +73,7 @@ function BasketItem({item,key,setBasket,basket}) {
          setBasket([...newbasket]);
       }}>
         <img className='cursor'
-            style={{ width: 35, height: 35, borderRadius: 13,paddingTop:40,paddingLeft:35 }}
+            style={{ width: 35, height: 35, borderRadius: 13,paddingTop:40,paddingLeft:35,position:'relative',right:0 }}
             src={require("./assets/cancel.png")}
           />
       </div>

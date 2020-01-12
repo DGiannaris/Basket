@@ -24,18 +24,23 @@ function Item({item,key,setBasket,basket}) {
               let newitem=item;
               let newbasket=basket;
               if(basket.some( it => it.name === item.name )){
-                newitem.quantity=item.quantity+1;
+                newitem.quantity=parseInt(item.quantity, 10)+1;
                 newbasket=basket.filter(it=>it.name !=item.name);
               }
               else{
-                newitem.quantity=1;
+                newitem.quantity=1; 
+               
               }
               setBasket([...newbasket,newitem])
               }}>
-              <img className='cursor'
-                style={{width:30,height:30, borderRadius: 13 }}
-                src={require("./assets/basket-icon.png")}
-              />
+               <div 
+               className='expand'
+               > 
+                <img className='cursor'
+                  style={{width:20,height:20 }}
+                  src={require("./assets/basket-icon.png")}
+                />
+              </div>
             </div>
           </div>
       </div>   

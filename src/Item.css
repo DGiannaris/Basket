@@ -14,3 +14,29 @@
 .cursor:active{
   transform: scale(0.9) ;
 }
+.expand{
+  width:40px;
+  height:25px;
+  background-color:#E91E63;
+  border-radius: 7px;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items: center;
+  margin-top:7px;
+  margin-left:10px;
+  cursor: pointer;
+}
+
+.expand:hover{
+  margin-left: -60%;
+  width:100px;
+  justify-content: flex-end;
+  background: linear-gradient(270deg, rgba(233,30,99,1) 0%, rgba(234,39,105,0.25) 45%);
+  padding-right:5%;
+
+}
+
+.expand:active{
+  transform: scale(0.9) ;
+}
