@@ -24,16 +24,18 @@ function Item({item,key,setBasket,basket}) {
             <div onClick={()=>{ 
                let newitem=item;
                let newbasket=basket.slice();
-               newbasket.forEach((it) => {
-                 if (it.key === item.key) {
-                   it.quantity = parseInt(it.quantity, 10)+1;
-                   setBasket([...newbasket]);
-                 }
-               });
+             
                if(!basket.some( it => it.key === item.key )){
                 
                 newitem.quantity=1;
                 setBasket([...newbasket,newitem]);
+               }else{
+                newbasket.forEach((it) => {
+                  if (it.key === item.key) {
+                    it.quantity = parseInt(it.quantity, 10)+1;
+                    setBasket([...newbasket]);
+                  }
+                });
                }
                  
                
