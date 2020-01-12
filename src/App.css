@@ -16,6 +16,14 @@ html {
   overflow:overlay;
 }
 
+  .mainCont{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:flex-end;
+  }
+
+
 .button{
   font-family:'Anton';
   font-size:33px;

@@ -20,18 +20,24 @@ function Item({item,key,setBasket,basket}) {
           <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:'30%'}}>
 
             <p style={{fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p>
+          
             <div onClick={()=>{ 
-              let newitem=item;
-              let newbasket=basket;
-              if(basket.some( it => it.name === item.name )){
-                newitem.quantity=parseInt(item.quantity, 10)+1;
-                newbasket=basket.filter(it=>it.name !=item.name);
-              }
-              else{
-                newitem.quantity=1; 
+               let newitem=item;
+               let newbasket=basket.slice();
+               newbasket.forEach((it) => {
+                 if (it.key === item.key) {
+                   it.quantity = parseInt(it.quantity, 10)+1;
+                   setBasket([...newbasket]);
+                 }
+               });
+               if(!basket.some( it => it.key === item.key )){
+                
+                newitem.quantity=1;
+                setBasket([...newbasket,newitem]);
+               }
+                 
                
-              }
-              setBasket([...newbasket,newitem])
+             
               }}>
                <div 
                className='expand'

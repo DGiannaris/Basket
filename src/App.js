@@ -10,7 +10,7 @@ function App() {
   const [basket, setBasket] = useState(JSON.parse(localStorage.getItem("basket") || "[]"));
 
 
-  let total=basket.reduce((a, b)=>{ return a + b.quantity*b.price;}, 0);
+  let total=basket.reduce((a, b)=>{ return a + parseInt(b.quantity,10)*parseInt(b.price,10);}, 0);
   total>100?total=total-total*0.10:total=total;
 
   useEffect(()=>{
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <div  style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:content==0?'45%':'44.2%',alignItems:'flex-end'}}>
+      <div className='mainCont' style={{width:content==0?'45%':'44.2%',}}>
         <div className='button' onClick={()=>setContent(0)}>
           <p  style={content==0?{opacity:0.6}:null} >Home</p>
         </div>
@@ -34,7 +34,7 @@ function App() {
         />
         <div className='button' onClick={()=>setContent(1) } style={{display:'flex',flexDirection:'row'}}>
           <p style={content==1?{opacity:0.6}:null} >Basket </p>
-          <p style={{color:'#E91E63',fontSize:14,width:12,height:20,paddingLeft:3,paddingTop:'22%'}}>{basket.reduce((a, b)=>{ return a + b.quantity}, 0)}</p>
+          <p style={{color:'#E91E63',fontSize:14,width:12,height:20,paddingLeft:3,paddingTop:'22%'}}>{basket.reduce((a, b)=>{ return a + parseInt(b.quantity,10)}, 0)}</p>
         </div>
       </div>
 

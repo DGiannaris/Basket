@@ -26,7 +26,7 @@ function BasketItem({item,key,setBasket,basket}) {
 
                newbasket.forEach((it,ind) => {
                 if (it.key === item.key) {
-                  item.quantity-1>0?it.quantity = parseInt(item.quantity, 10)-1:newbasket.splice(ind, 1);
+                  parseInt(item.quantity,10)-1>0?it.quantity = parseInt(item.quantity, 10)-1:newbasket.splice(ind, 1);
                 }
               });
                 
