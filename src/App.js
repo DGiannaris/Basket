@@ -85,6 +85,22 @@ function App() {
             }
             {basket.length>0&&
             <div className='cursor'
+            onClick={()=>{
+              console.log('<?xml version="1.0" encoding="UTF-8"?>')
+              console.log('<basket>')
+              basket.map((it)=>{
+                console.log(
+                `<item>
+                  <name>${it.name}</name>
+                  <quantity>${it.quantity}</quantity>
+                  <price>${it.price}</price>
+                  <key>${it.key}</key>`+
+                `\n</item>`)
+              })
+             
+              console.log('</basket>')
+              }
+            }
             style={{width:200,height:40,borderRadius:7,backgroundColor:'#E91E63',position:'absolute',
             bottom:30,left:'64%',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
               <p style={{fontSize:15,fontFamily:'Montserrat',color:'white',}}>BUY</p>
