@@ -1,3 +1,28 @@
+
+
+.itemCon{
+  width:300px;
+  margin-bottom:10%;
+}
+
+.item{
+  width:300px;
+  height:160px;
+}
+
+.itemData{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.buttonCon{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width:30%;
+}
+
 .background-image{
   box-shadow: 7px 7px 22px -9px rgba(0,0,0,0.75);
   

@@ -9,15 +9,15 @@ function Item({item,key,setBasket,basket}) {
  
     return (
     <div key={key}>
-      <div  style={{width:300,marginBottom:'10%'}}>
-        <div style={{width:300,height:160}}>
+      <div className='itemCon' >
+        <div className='item' >
            <img  className='background-image' src={item.img}  onMouseEnter={()=>setOnMouse(true)} onMouseLeave={()=>setOnMouse(false)}
            style={!onmouse?{width:200,height:150,borderRadius:13}:{width:200,height:150}}  />
         </div>
       
-      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+      <div className='itemData'>
           <p style={{fontFamily:'Montserrat'}}>{item.name} </p>
-          <div style={{display:'flex',flexDirection:'row',justifyContent:'space-between',width:'30%'}}>
+          <div className='buttonCon' >
 
             <p style={{fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p>
           

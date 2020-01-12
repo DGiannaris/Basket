@@ -41,7 +41,7 @@ import React from 'react';
     },
     {
       name: 'Huawei P Smart Z',
-      price: 156.50,
+      price: 199.89,
       img:'https://des.gbtcdn.com/uploads/pdm-desc-pic/Electronic/image/2019/07/18/15634389108087.jpg',
       key:7
     },

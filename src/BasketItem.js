@@ -1,5 +1,5 @@
 import React,{ useState }  from 'react';
-import './Item.css';
+import './BasketItem.css';
 
 function BasketItem({item,key,setBasket,basket}) {
   const [onmouse, setOnMouse] = useState(false);
@@ -10,17 +10,17 @@ function BasketItem({item,key,setBasket,basket}) {
     return (
     <div key={key}>
      
-      <div style={{display:'flex',flexDirection:'row',marginTop:'3%'}} >
-        <div style={{width:300,height:160}}>
+      <div className='mainCont'  >
+        <div className='imgCont'>
            <img  src={item.img}  
            style={{width:200,height:150,borderRadius:13}}  />
         </div> 
       
-      <div style={{display:'flex',flexDirection:'column',alignItems:'center',width:200}}>
+      <div className='itemFunc' >
         <p style={{fontFamily:'Montserrat'}}>{item.name}  <p style={{fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p> </p>  
-        <div style={{display:'flex',flexDirection:'row'}}>
+        <div className='arrowsCont' >
   
-          <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}} onClick={()=>{
+          <div className='arrow' onClick={()=>{
              
               let newbasket=basket.slice();
 
@@ -39,10 +39,10 @@ function BasketItem({item,key,setBasket,basket}) {
           </div>
 
         <div>
-          <p style={{fontFamily:'Montserrat',paddingLeft:7,paddingRight:7,paddingBottom:2}} >{item.quantity}</p>
+          <p className='quant' >{item.quantity}</p>
         </div>
 
-          <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}} onClick={()=>{
+          <div className='arrow' onClick={()=>{
              
               let newbasket=basket.slice();
               newbasket.forEach((it) => {
@@ -72,8 +72,7 @@ function BasketItem({item,key,setBasket,basket}) {
          
          setBasket([...newbasket]);
       }}>
-        <img className='cursor'
-            style={{ width: 35, height: 35, borderRadius: 13,paddingTop:40,paddingLeft:35,position:'relative',right:0 }}
+        <img className='cancel'
             src={require("./assets/cancel.png")}
           />
       </div>
