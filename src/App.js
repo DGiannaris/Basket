@@ -10,9 +10,8 @@ function App() {
   const [basket, setBasket] = useState(JSON.parse(localStorage.getItem("basket") || "[]"));
 
 
-  let total=basket.reduce((a, b)=>{ return a + parseInt(b.quantity,10)*parseInt(b.price,10);}, 0);
-
-  total>100?total=total-total*0.10:total=total;
+  let total=basket.reduce((a, b)=>{ return a + parseFloat(b.quantity,10)*parseFloat(b.price,10);}, 0);
+  total>100?total-=total*0.10:total=total;
 
   useEffect(()=>{
     localStorage.setItem("basket", JSON.stringify(basket));
