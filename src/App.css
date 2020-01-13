@@ -29,7 +29,7 @@ html {
   font-size:33px;
   font-weight:'400';
   letter-spacing:2px;
-  color:'#202020';
+  color:#202020;
 }
 
 .button:hover{
@@ -38,7 +38,7 @@ html {
 }
 
 .indicator{
-  color:#E91E63;
+  color:#F50057;
   font-size:14px;
   width:12px;
   height:20px;
@@ -108,54 +108,30 @@ html {
 @media only screen and (max-width: 400px) {
   .mainCont{
     margin-left: -180px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:flex-end;
-   
+    
     }
-  
+
     .buyButton{
       width:100px;
-      height:40px;
-      border-radius:7px;
-      background-color:#E91E63;
-      position:absolute;
-      bottom:30px;
       left:65%;
-      display:flex;
-      flex-direction:row;
-      align-items:center;
-      justify-content:center;
-      cursor: pointer;
     }
     .itemsCont{
-      display: flex;
-      margin-top: 5%;
-      flex-wrap: wrap;
-      flex-wrap: row;
-      justify-content: space-between;
-      width: 60%;
       margin-left: -30%;
     }
 
+
     .button{
-      font-family:'Anton';
       font-size:20px;
-      font-weight:'400';
-      letter-spacing:2px;
-      color:'#202020';
-      
     }
     
+    
+    
     .sideTitlesCont{
-      position:absolute;
       left:25%;
-      top:190px;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
     }
+
+   
+    
 
     .basketitems{
       margin-top:100px;
@@ -163,13 +139,9 @@ html {
     }
 
     .indicator{
-      color:#E91E63;
-      font-size:14px;
-      width:12px;
-      height:20px;
-      padding-left:3px;
       padding-top:5%;
     }
+    
 
 }
 
@@ -178,30 +150,21 @@ html {
 
   .mainCont{
     margin-left: -100px;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-between;
-    align-items:flex-end;
-   
-    }
   
-    .button{
-      font-family:'Anton';
-      font-size:30px;
-      font-weight:'400';
-      letter-spacing:2px;
-      color:'#202020';
-      
     }
+
+    .button{
+      font-size:30px;
+    }
+
+    
+    
     
     .sideTitlesCont{
-      position:absolute;
       left:33%;
-      top:190px;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
     }
+
+    
 
     .basketitems{
       margin-top:100px;
@@ -209,19 +172,11 @@ html {
     }
 
     .buyButton{
-      width:100px;
-      height:40px;
-      border-radius:7px;
-      background-color:#E91E63;
-      position:absolute;
-      bottom:30px;
+      width:100px; 
       left:75%;
-      display:flex;
-      flex-direction:row;
-      align-items:center;
-      justify-content:center;
-      cursor: pointer;
     }
+
+  
     
 }
 

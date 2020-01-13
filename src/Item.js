@@ -8,7 +8,7 @@ function Item({item,key,setBasket,basket}) {
 
  
     return (
-    <div key={key}>
+    <div style={{marginTop:30}} key={key}>
       <div className='itemCon' >
         <div className='item' >
            <img  className='background-image' src={item.img}  onMouseEnter={()=>setOnMouse(true)} onMouseLeave={()=>setOnMouse(false)}
@@ -19,7 +19,7 @@ function Item({item,key,setBasket,basket}) {
           <p style={{fontFamily:'Montserrat'}}>{item.name} </p>
           <div className='buttonCon' >
 
-            <p style={{fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p>
+            <p style={{color:'#BDBDBD',fontFamily:'Montserrat',fontSize:13}}>{item.price}€ </p>
           
             <div onClick={()=>{ 
                let newitem=item;

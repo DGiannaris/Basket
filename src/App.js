@@ -60,7 +60,7 @@ function App() {
                 {`Total: ${total.toFixed(2)}€`}
             </p>
             {total>100 && 
-            <p style={{fontSize:15,fontFamily:'Montserrat',color:'#E91E63',marginTop:-30}}>Discount 10%</p>}
+            <p style={{fontSize:15,fontFamily:'Montserrat',color:'#F50057',marginTop:-30}}>Discount 10%</p>}
           </div>
           <div className='basketitems'>
               {basket.length>0?basket.map((item,ind )=> (

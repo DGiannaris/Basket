@@ -13,14 +13,15 @@
 .itemData{
   display:flex;
   flex-direction:column;
-  align-items:center;
+  align-items:flex-start;
+  margin-left:50px;
 }
 
 .buttonCon{
   display:flex;
   flex-direction:row;
   justify-content:space-between;
-  width:30%;
+  width:80%;
 }
 
 .background-image{
@@ -29,7 +30,7 @@
 }
 .background-image:hover {
   transform: scale(1.2) ;
-  transition: transform 5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
 .cursor:hover{
@@ -40,10 +41,10 @@
   transform: scale(0.9) ;
 }
 .expand{
-  width:40px;
+  width:100px;
   height:25px;
-  background-color:#E91E63;
-  border-radius: 7px;
+  background-color:#F50057;
+  border-radius: 4px;
   display:flex;
   flex-direction:row;
   justify-content:center;
@@ -54,12 +55,8 @@
 }
 
 .expand:hover{
-  margin-left: -60%;
-  width:100px;
-  justify-content: flex-end;
-  background: linear-gradient(270deg, rgba(233,30,99,1) 0%, rgba(234,39,105,0.25) 45%);
-  padding-right:5%;
-
+transform: scale(1.1);
+transition: transform 0.3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 }
 
 .expand:active{
