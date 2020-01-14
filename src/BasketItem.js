@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./BasketItem.css";
 
 function BasketItem({ item, key, setBasket, basket }) {
-  const [onmouse, setOnMouse] = useState(false);
+
 
   return (
     <div key={key}>
